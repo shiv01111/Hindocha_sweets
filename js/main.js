@@ -298,8 +298,9 @@
       h.setAttribute("aria-expanded", "false");
       h.nextElementSibling.classList.remove("open");
     });
-    // Scroll drawer to top
-    drawer.scrollTop = 0;
+    // Scroll inner content to top
+    const inner = document.getElementById('pdDrawer')?.querySelector('.pd-inner');
+    if (inner) inner.scrollTop = 0;
     // Focus close button for a11y
     setTimeout(() => $("#pdClose")?.focus(), 80);
   }
