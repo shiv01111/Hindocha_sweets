@@ -240,6 +240,16 @@
   let drawerName = "";
   let drawerPrice = 0;
 
+  // Prevent Lenis from stealing scroll inside the drawer
+  const pdInner = document.querySelector('.pd-inner');
+  if (pdInner) {
+    // wheel events — let the inner div scroll natively
+    pdInner.addEventListener('wheel', e => { e.stopPropagation(); }, { passive: true });
+    // touch events — allow native scroll
+    pdInner.addEventListener('touchstart', e => { e.stopPropagation(); }, { passive: true });
+    pdInner.addEventListener('touchmove',  e => { e.stopPropagation(); }, { passive: true });
+  }
+
   function openDrawer(card) {
     const d = card.dataset;
     drawerName  = d.name;
@@ -287,7 +297,8 @@
     drawerQty = 1;
     updateWA();
 
-    // Open
+    // Open — stop Lenis so it doesn't steal drawer scroll
+    if (lenis) lenis.stop();
     overlay.classList.add("open");
     drawer.classList.add("open");
     overlay.setAttribute("aria-hidden", "false");
@@ -311,6 +322,8 @@
     overlay.setAttribute("aria-hidden", "true");
     drawer.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+    // Resume Lenis after drawer closes
+    if (lenis) lenis.start();
   }
 
   function updatePrice() {
