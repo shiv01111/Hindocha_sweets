@@ -228,6 +228,150 @@
   });
 
   /* ============================================================
+     CART SYSTEM
+     State lives in localStorage. Cart drawer slides in from left.
+     "Order All on WhatsApp" sends one message with all items.
+  ============================================================ */
+  const WA_CART = "919000000001"; // TODO-SWAP: real WA number
+  const CART_KEY = "hs_cart";
+
+  // Weight → multiplier for price calculation
+  const wtMult = { "250g": 0.25, "500g": 0.5, "1 kg": 1 };
+
+  let cart = [];
+  try { cart = JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch { cart = []; }
+
+  /* ---- Elements ---- */
+  const cartOverlay  = $("#cartOverlay");
+  const cartDrawerEl = $("#cartDrawer");
+  const cartBadge    = $("#cartBadge");
+  const cartItemsEl  = $("#cartItems");
+  const cartEmptyEl  = $("#cartEmpty");
+  const cartFooterEl = $("#cartFooter");
+  const cartSubEl    = $("#cartSubtotal");
+  const cartTotalEl  = $("#cartTotal");
+  const cartCountLbl = $("#cartCountLabel");
+
+  /* ---- Persist & re-render ---- */
+  function saveCart() {
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    renderCart();
+  }
+
+  function itemPrice(item) {
+    const m = wtMult[item.weight] ?? 1;
+    return Math.round(item.price * m * item.qty);
+  }
+
+  function renderCart() {
+    const totalItems = cart.reduce((s, i) => s + i.qty, 0);
+    const subtotal   = cart.reduce((s, i) => s + itemPrice(i), 0);
+
+    // Badge
+    cartBadge.textContent = totalItems;
+    cartBadge.setAttribute("data-count", totalItems);
+    cartCountLbl.textContent = `${totalItems} item${totalItems !== 1 ? "s" : ""}`;
+
+    // Empty / filled states
+    cartEmptyEl.style.display  = cart.length ? "none"  : "flex";
+    cartItemsEl.style.display  = cart.length ? "block" : "none";
+    cartFooterEl.style.display = cart.length ? "flex"  : "none";
+
+    if (!cart.length) return;
+
+    // Render items
+    cartItemsEl.innerHTML = cart.map((item, idx) => `
+      <li class="cart-item" data-idx="${idx}">
+        <div class="cart-item__img"><img src="${item.img}" alt="${item.name}" loading="lazy" /></div>
+        <div class="cart-item__info">
+          <div class="cart-item__name">${item.name}</div>
+          <div class="cart-item__meta">${item.weight} · ₹${item.price}/kg</div>
+          <div class="cart-item__qty">
+            <button data-action="minus" data-idx="${idx}" aria-label="Decrease">−</button>
+            <span>${item.qty}</span>
+            <button data-action="plus" data-idx="${idx}" aria-label="Increase">+</button>
+          </div>
+          <div class="cart-item__price">₹${itemPrice(item).toLocaleString("en-IN")}</div>
+        </div>
+        <button class="cart-item__remove" data-remove="${idx}" aria-label="Remove ${item.name}" title="Remove">✕</button>
+      </li>`).join("");
+
+    // Totals
+    cartSubEl.textContent   = `₹${subtotal.toLocaleString("en-IN")}`;
+    cartTotalEl.textContent = `₹${subtotal.toLocaleString("en-IN")}`;
+
+    // WhatsApp message for ALL items
+    const lines = cart.map(i =>
+      `• ${i.name} — ${i.weight} × ${i.qty}  (₹${itemPrice(i).toLocaleString("en-IN")})`
+    ).join("%0A");
+    const msg = encodeURIComponent(
+      `Hello Hindocha Sweets! 🙏\n\nI'd like to order the following:\n\n`
+    ) + lines +
+    encodeURIComponent(`\n\nTotal: ₹${subtotal.toLocaleString("en-IN")}\n\nPlease confirm availability. Thank you!`);
+    const cartWaBtn = $("#cartWhatsapp");
+    if (cartWaBtn) cartWaBtn.href = `https://wa.me/${WA_CART}?text=${msg}`;
+  }
+
+  /* ---- Cart open / close ---- */
+  function openCart() {
+    cartOverlay.classList.add("open");
+    cartDrawerEl.classList.add("open");
+    cartOverlay.setAttribute("aria-hidden", "false");
+    cartDrawerEl.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    if (lenis) lenis.stop();
+    // scroll to top
+    const body = $("#cartBody");
+    if (body) body.scrollTop = 0;
+  }
+  function closeCart() {
+    cartOverlay.classList.remove("open");
+    cartDrawerEl.classList.remove("open");
+    cartOverlay.setAttribute("aria-hidden", "true");
+    cartDrawerEl.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    if (lenis) lenis.start();
+  }
+
+  $("#cartIcon")?.addEventListener("click", openCart);
+  $("#cartClose")?.addEventListener("click", closeCart);
+  cartOverlay?.addEventListener("click", closeCart);
+  $("#cartContinue")?.addEventListener("click", () => { closeCart(); });
+  $("#cartClear")?.addEventListener("click", () => {
+    if (confirm("Clear all items from your cart?")) { cart = []; saveCart(); }
+  });
+
+  // Qty ± and remove via event delegation on cart list
+  cartItemsEl?.addEventListener("click", e => {
+    const btn   = e.target.closest("[data-action]");
+    const remEl = e.target.closest("[data-remove]");
+    if (btn) {
+      const idx = parseInt(btn.dataset.idx);
+      if (btn.dataset.action === "plus")  cart[idx].qty = Math.min(cart[idx].qty + 1, 20);
+      if (btn.dataset.action === "minus") {
+        cart[idx].qty--;
+        if (cart[idx].qty <= 0) cart.splice(idx, 1);
+      }
+      saveCart();
+    } else if (remEl) {
+      const idx = parseInt(remEl.dataset.remove);
+      cart.splice(idx, 1);
+      saveCart();
+    }
+  });
+
+  // Lenis stop/start for cart body
+  const cartBodyEl = $("#cartBody");
+  if (cartBodyEl) {
+    cartBodyEl.addEventListener("wheel",      e => e.stopPropagation(), { passive: true });
+    cartBodyEl.addEventListener("touchstart", e => e.stopPropagation(), { passive: true });
+    cartBodyEl.addEventListener("touchmove",  e => e.stopPropagation(), { passive: true });
+  }
+
+  // Initial render (restore cart from localStorage)
+  renderCart();
+
+  /* ============================================================
      PRODUCT DRAWER
      Opens a Gwalia-style product detail panel when "Order ›" is clicked.
      Reads all data from card's data-* attributes so no extra config needed.
@@ -354,6 +498,43 @@
     drawerQty = Math.max(drawerQty - 1, 1);
     $("#pdQty").textContent = drawerQty;
     updatePrice(); updateWA();
+  });
+
+  /* ---- Add to Cart from drawer ---- */
+  $("#pdAddCart")?.addEventListener("click", () => {
+    // Find if same product+weight already in cart
+    const existing = cart.find(i => i.name === drawerName && i.weight === drawerWt);
+    if (existing) {
+      existing.qty = Math.min(existing.qty + drawerQty, 20);
+    } else {
+      cart.push({
+        name:   drawerName,
+        img:    document.getElementById("pdImg").src,
+        price:  drawerPrice,
+        weight: drawerWt,
+        qty:    drawerQty,
+      });
+    }
+    saveCart();
+
+    // Visual feedback on button
+    const btn = $("#pdAddCart");
+    btn.textContent = "✔ Added!";
+    btn.classList.add("success");
+    setTimeout(() => {
+      btn.textContent = "🛒 Add to Cart";
+      btn.classList.remove("success");
+    }, 1600);
+
+    // Bump badge
+    cartBadge.classList.add("bump");
+    setTimeout(() => cartBadge.classList.remove("bump"), 400);
+
+    // After short delay close drawer, open cart
+    setTimeout(() => {
+      closeDrawer();
+      openCart();
+    }, 700);
   });
 
   // Close triggers
