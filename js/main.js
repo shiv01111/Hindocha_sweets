@@ -226,4 +226,149 @@
     note.textContent = "🎉 Thank you! You're on the list for sweet offers.";
     nlForm.reset();
   });
+
+  /* ============================================================
+     PRODUCT DRAWER
+     Opens a Gwalia-style product detail panel when "Order ›" is clicked.
+     Reads all data from card's data-* attributes so no extra config needed.
+  ============================================================ */
+  const WA_NUM = "919000000001"; // TODO-SWAP: real number
+  const overlay = $("#pdOverlay");
+  const drawer  = $("#pdDrawer");
+  let drawerQty = 1;
+  let drawerWt  = "";
+  let drawerName = "";
+  let drawerPrice = 0;
+
+  function openDrawer(card) {
+    const d = card.dataset;
+    drawerName  = d.name;
+    drawerPrice = parseInt(d.price, 10);
+    drawerQty   = 1;
+
+    // Populate image
+    const img = $("#pdImg");
+    img.src = d.img; img.alt = d.name;
+
+    // Tag
+    const tag = $("#pdTag");
+    tag.textContent = d.tag || "";
+
+    // Text fields
+    $("#pdTitle").textContent       = d.name;
+    $("#pdDesc").textContent        = d.desc;
+    $("#pdIngredients").textContent = d.ingredients;
+    $("#pdStorage").textContent     = d.storage;
+
+    // Price
+    updatePrice();
+
+    // Weight chips
+    const weightsEl = $("#pdWeights");
+    const weights = JSON.parse(d.weights || '["250g","500g","1 kg"]');
+    weightsEl.innerHTML = "";
+    weights.forEach((w, i) => {
+      const btn = document.createElement("button");
+      btn.className = "pd-wt" + (i === 1 ? " active" : "");
+      btn.textContent = w;
+      if (i === 1) drawerWt = w;
+      btn.addEventListener("click", () => {
+        $$(".pd-wt").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        drawerWt = w;
+        updateWA();
+      });
+      weightsEl.appendChild(btn);
+    });
+    if (!drawerWt) drawerWt = weights[0];
+
+    // Qty
+    $("#pdQty").textContent = "1";
+    drawerQty = 1;
+    updateWA();
+
+    // Open
+    overlay.classList.add("open");
+    drawer.classList.add("open");
+    overlay.setAttribute("aria-hidden", "false");
+    drawer.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    // Close accordions on fresh open
+    $$(".pd-acc__head").forEach(h => {
+      h.setAttribute("aria-expanded", "false");
+      h.nextElementSibling.classList.remove("open");
+    });
+    // Scroll drawer to top
+    drawer.scrollTop = 0;
+    // Focus close button for a11y
+    setTimeout(() => $("#pdClose")?.focus(), 80);
+  }
+
+  function closeDrawer() {
+    overlay.classList.remove("open");
+    drawer.classList.remove("open");
+    overlay.setAttribute("aria-hidden", "true");
+    drawer.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  function updatePrice() {
+    // Base per-kg price; scale by qty
+    const total = drawerPrice * drawerQty;
+    $("#pdPrice").textContent = `₹${total.toLocaleString("en-IN")} / kg`;
+  }
+
+  function updateWA() {
+    const text = encodeURIComponent(
+      `Hello Hindocha Sweets! 🙏\n\nI'd like to order:\n` +
+      `*Product:* ${drawerName}\n` +
+      `*Weight:*  ${drawerWt}\n` +
+      `*Quantity:* ${drawerQty}\n\n` +
+      `Please confirm availability and price. Thank you!`
+    );
+    const wa = $("#pdWhatsapp");
+    if (wa) wa.href = `https://wa.me/${WA_NUM}?text=${text}`;
+  }
+
+  // Quantity buttons
+  $("#pdPlus")?.addEventListener("click", () => {
+    drawerQty = Math.min(drawerQty + 1, 20);
+    $("#pdQty").textContent = drawerQty;
+    updatePrice(); updateWA();
+  });
+  $("#pdMinus")?.addEventListener("click", () => {
+    drawerQty = Math.max(drawerQty - 1, 1);
+    $("#pdQty").textContent = drawerQty;
+    updatePrice(); updateWA();
+  });
+
+  // Close triggers
+  $("#pdClose")?.addEventListener("click", closeDrawer);
+  overlay?.addEventListener("click", closeDrawer);
+  document.addEventListener("keydown", e => { if (e.key === "Escape") closeDrawer(); });
+
+  // Open on every "Order ›" button click (event delegation)
+  document.addEventListener("click", e => {
+    const btn = e.target.closest(".btn-order");
+    if (!btn) return;
+    const card = btn.closest(".card");
+    if (card) { e.preventDefault(); openDrawer(card); }
+  });
+
+  // Accordion
+  $$(".pd-acc__head").forEach(head => {
+    head.addEventListener("click", () => {
+      const expanded = head.getAttribute("aria-expanded") === "true";
+      // Close all first
+      $$(".pd-acc__head").forEach(h => {
+        h.setAttribute("aria-expanded", "false");
+        h.nextElementSibling.classList.remove("open");
+      });
+      if (!expanded) {
+        head.setAttribute("aria-expanded", "true");
+        head.nextElementSibling.classList.add("open");
+      }
+    });
+  });
+
 })();

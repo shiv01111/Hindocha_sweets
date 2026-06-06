@@ -231,36 +231,35 @@
         </header>
 
         <div class="cards">
-          <!-- card template repeated; TODO-SWAP each product image -->
-          <article class="card reveal">
-            <div class="card__img"><img src="assets/images/penda.jpg" alt="Hindocha Special Penda" loading="lazy" /><span class="card__tag">Bestseller</span></div>
-            <div class="card__body"><h3>Special Penda</h3><p>Our legendary signature — rich, soft & melt-in-mouth.</p><div class="card__foot"><span class="price">From ₹420<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Special%20Penda.">Order ›</a></div></div>
+          <article class="card reveal" data-name="Special Penda" data-img="assets/images/penda.jpg" data-desc="Our legendary signature — rich, soft & melt-in-mouth." data-price="420" data-weights='["250g","500g","1 kg"]' data-ingredients="Pure mawa (khoya), sugar, cardamom, saffron, almonds" data-storage="Store in a cool, dry place. Best consumed within 5 days." data-tag="Bestseller">
+            <div class="card__img"><img src="assets/images/penda.jpg" alt="Special Penda" loading="lazy" /><span class="card__tag">Bestseller</span></div>
+            <div class="card__body"><h3>Special Penda</h3><p>Our legendary signature — rich, soft & melt-in-mouth.</p><div class="card__foot"><span class="price">From ₹420<small>/kg</small></span><button class="btn-order" aria-label="Order Special Penda">Order ›</button></div></div>
           </article>
-          <article class="card reveal">
+          <article class="card reveal" data-name="Kesar Penda" data-img="assets/images/penda-closeup.jpg" data-desc="Infused with premium Kashmiri saffron for a royal finish." data-price="480" data-weights='["250g","500g","1 kg"]' data-ingredients="Mawa, sugar, Kashmiri saffron, cardamom, pistachio" data-storage="Store in a cool, dry place. Best consumed within 5 days." data-tag="">
             <div class="card__img"><img src="assets/images/penda-closeup.jpg" alt="Kesar Penda" loading="lazy" /></div>
-            <div class="card__body"><h3>Kesar Penda</h3><p>Infused with premium Kashmiri saffron for a royal finish.</p><div class="card__foot"><span class="price">From ₹480<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Kesar%20Penda.">Order ›</a></div></div>
+            <div class="card__body"><h3>Kesar Penda</h3><p>Infused with premium Kashmiri saffron for a royal finish.</p><div class="card__foot"><span class="price">From ₹480<small>/kg</small></span><button class="btn-order" aria-label="Order Kesar Penda">Order ›</button></div></div>
           </article>
-          <article class="card reveal">
+          <article class="card reveal" data-name="Barfi" data-img="assets/images/barfi.jpg" data-desc="Dense, fragrant milk barfi layered with care." data-price="440" data-weights='["250g","500g","1 kg"]' data-ingredients="Mawa, sugar, cardamom, pistachio, saffron" data-storage="Store in a cool, dry place. Consume within 4–5 days." data-tag="">
             <div class="card__img"><img src="assets/images/barfi.jpg" alt="Barfi" loading="lazy" /></div>
-            <div class="card__body"><h3>Barfi</h3><p>Dense, fragrant milk barfi layered with care.</p><div class="card__foot"><span class="price">From ₹440<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Barfi.">Order ›</a></div></div>
+            <div class="card__body"><h3>Barfi</h3><p>Dense, fragrant milk barfi layered with care.</p><div class="card__foot"><span class="price">From ₹440<small>/kg</small></span><button class="btn-order" aria-label="Order Barfi">Order ›</button></div></div>
           </article>
-          <article class="card reveal">
+          <article class="card reveal" data-name="Kaju Katli" data-img="assets/images/kaju-katli.jpg" data-desc="Wafer-thin cashew diamonds with edible silver leaf." data-price="720" data-weights='["250g","500g","1 kg"]' data-ingredients="Cashew nuts, sugar, rose water, edible silver leaf (varak)" data-storage="Store in an airtight container. Best within 7–10 days." data-tag="">
             <div class="card__img"><img src="assets/images/kaju-katli.jpg" alt="Kaju Katli" loading="lazy" /></div>
-            <div class="card__body"><h3>Kaju Katli</h3><p>Wafer-thin cashew diamonds with edible silver leaf.</p><div class="card__foot"><span class="price">From ₹720<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Kaju%20Katli.">Order ›</a></div></div>
+            <div class="card__body"><h3>Kaju Katli</h3><p>Wafer-thin cashew diamonds with edible silver leaf.</p><div class="card__foot"><span class="price">From ₹720<small>/kg</small></span><button class="btn-order" aria-label="Order Kaju Katli">Order ›</button></div></div>
           </article>
-          <article class="card reveal">
+          <article class="card reveal" data-name="Dry Fruit Sweets" data-img="assets/images/dry-fruit.jpg" data-desc="Loaded with almonds, pistachio & cashew indulgence." data-price="860" data-weights='["250g","500g","1 kg"]' data-ingredients="Mixed dry fruits (almond, pistachio, cashew, anjeer), sugar, ghee" data-storage="Store in a cool, dry place. Shelf life 10 days." data-tag="">
             <div class="card__img"><img src="assets/images/dry-fruit.jpg" alt="Dry Fruit Sweets" loading="lazy" /></div>
-            <div class="card__body"><h3>Dry Fruit Sweets</h3><p>Loaded with almonds, pistachio & cashew indulgence.</p><div class="card__foot"><span class="price">From ₹860<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Dry%20Fruit%20Sweets.">Order ›</a></div></div>
+            <div class="card__body"><h3>Dry Fruit Sweets</h3><p>Loaded with almonds, pistachio & cashew indulgence.</p><div class="card__foot"><span class="price">From ₹860<small>/kg</small></span><button class="btn-order" aria-label="Order Dry Fruit Sweets">Order ›</button></div></div>
           </article>
-          <article class="card reveal">
+          <article class="card reveal" data-name="Festival Specials" data-img="assets/images/festival.jpg" data-desc="Limited celebration sweets for every Gujarati festival." data-price="520" data-weights='["250g","500g","1 kg"]' data-ingredients="Seasonal ingredients — varies by festival special" data-storage="Store in a cool, dry place. Consume fresh." data-tag="Seasonal">
             <div class="card__img"><img src="assets/images/festival.jpg" alt="Festival Specials" loading="lazy" /><span class="card__tag">Seasonal</span></div>
-            <div class="card__body"><h3>Festival Specials</h3><p>Limited celebration sweets for every Gujarati festival.</p><div class="card__foot"><span class="price">From ₹520<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Festival%20Specials.">Order ›</a></div></div>
+            <div class="card__body"><h3>Festival Specials</h3><p>Limited celebration sweets for every Gujarati festival.</p><div class="card__foot"><span class="price">From ₹520<small>/kg</small></span><button class="btn-order" aria-label="Order Festival Specials">Order ›</button></div></div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ============ SECTION 4 — FARSAN COLLECTION ============ -->
+    <!-- ============================================ SECTION 4 — FARSAN COLLECTION ============ -->
     <section class="collection collection--alt" id="farsan">
       <div class="container">
         <header class="section-head reveal">
@@ -270,29 +269,29 @@
         </header>
 
         <div class="cards">
-          <article class="card reveal">
+          <article class="card reveal" data-name="Gathiya" data-img="assets/images/gathiya.jpg" data-desc="Soft, melt-away besan gathiya — a Gujarati breakfast classic." data-price="260" data-weights='["250g","500g","1 kg"]' data-ingredients="Chickpea flour (besan), oil, cumin, ajwain, turmeric, salt" data-storage="Store in an airtight container. Shelf life 15 days." data-tag="">
             <div class="card__img"><img src="assets/images/gathiya.jpg" alt="Gathiya" loading="lazy" /></div>
-            <div class="card__body"><h3>Gathiya</h3><p>Soft, melt-away besan gathiya — a Gujarati breakfast classic.</p><div class="card__foot"><span class="price">From ₹260<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Gathiya.">Order ›</a></div></div>
+            <div class="card__body"><h3>Gathiya</h3><p>Soft, melt-away besan gathiya — a Gujarati breakfast classic.</p><div class="card__foot"><span class="price">From ₹260<small>/kg</small></span><button class="btn-order" aria-label="Order Gathiya">Order ›</button></div></div>
           </article>
-          <article class="card reveal">
+          <article class="card reveal" data-name="Bhavnagari Gathiya" data-img="assets/images/bhavnagari.jpg" data-desc="The authentic spiced variety from the heart of Saurashtra." data-price="280" data-weights='["250g","500g","1 kg"]' data-ingredients="Chickpea flour, oil, black pepper, spices, ajwain" data-storage="Store in an airtight container. Shelf life 15 days." data-tag="Regional">
             <div class="card__img"><img src="assets/images/bhavnagari.jpg" alt="Bhavnagari Gathiya" loading="lazy" /><span class="card__tag">Regional</span></div>
-            <div class="card__body"><h3>Bhavnagari Gathiya</h3><p>The authentic spiced variety from the heart of Saurashtra.</p><div class="card__foot"><span class="price">From ₹280<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Bhavnagari%20Gathiya.">Order ›</a></div></div>
+            <div class="card__body"><h3>Bhavnagari Gathiya</h3><p>The authentic spiced variety from the heart of Saurashtra.</p><div class="card__foot"><span class="price">From ₹280<small>/kg</small></span><button class="btn-order" aria-label="Order Bhavnagari Gathiya">Order ›</button></div></div>
           </article>
-          <article class="card reveal">
+          <article class="card reveal" data-name="Chevdo" data-img="assets/images/chevdo.jpg" data-desc="Crunchy, lightly spiced mix with peanuts & curry leaves." data-price="240" data-weights='["250g","500g","1 kg"]' data-ingredients="Poha (flattened rice), peanuts, cashew, raisins, curry leaves, spices, oil" data-storage="Store in an airtight container. Shelf life 20 days." data-tag="">
             <div class="card__img"><img src="assets/images/chevdo.jpg" alt="Chevdo" loading="lazy" /></div>
-            <div class="card__body"><h3>Chevdo</h3><p>Crunchy, lightly spiced mix with peanuts & curry leaves.</p><div class="card__foot"><span class="price">From ₹240<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Chevdo.">Order ›</a></div></div>
+            <div class="card__body"><h3>Chevdo</h3><p>Crunchy, lightly spiced mix with peanuts & curry leaves.</p><div class="card__foot"><span class="price">From ₹240<small>/kg</small></span><button class="btn-order" aria-label="Order Chevdo">Order ›</button></div></div>
           </article>
-          <article class="card reveal">
+          <article class="card reveal" data-name="Sev" data-img="assets/images/sev.jpg" data-desc="Fine golden strands — the perfect everyday companion." data-price="240" data-weights='["250g","500g","1 kg"]' data-ingredients="Chickpea flour, oil, salt, ajwain, turmeric" data-storage="Store in an airtight container. Shelf life 20 days." data-tag="">
             <div class="card__img"><img src="assets/images/sev.jpg" alt="Sev" loading="lazy" /></div>
-            <div class="card__body"><h3>Sev</h3><p>Fine golden strands — the perfect everyday companion.</p><div class="card__foot"><span class="price">From ₹240<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Sev.">Order ›</a></div></div>
+            <div class="card__body"><h3>Sev</h3><p>Fine golden strands — the perfect everyday companion.</p><div class="card__foot"><span class="price">From ₹240<small>/kg</small></span><button class="btn-order" aria-label="Order Sev">Order ›</button></div></div>
           </article>
-          <article class="card reveal">
+          <article class="card reveal" data-name="Mix Farsan" data-img="assets/images/mix-farsan.jpg" data-desc="A festive medley of our finest crispy savouries." data-price="300" data-weights='["250g","500g","1 kg"]' data-ingredients="Sev, gathiya, poha, peanuts, cashew, spices, oil" data-storage="Store in an airtight container. Shelf life 15 days." data-tag="">
             <div class="card__img"><img src="assets/images/mix-farsan.jpg" alt="Mix Farsan" loading="lazy" /></div>
-            <div class="card__body"><h3>Mix Farsan</h3><p>A festive medley of our finest crispy savouries.</p><div class="card__foot"><span class="price">From ₹300<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Mix%20Farsan.">Order ›</a></div></div>
+            <div class="card__body"><h3>Mix Farsan</h3><p>A festive medley of our finest crispy savouries.</p><div class="card__foot"><span class="price">From ₹300<small>/kg</small></span><button class="btn-order" aria-label="Order Mix Farsan">Order ›</button></div></div>
           </article>
-          <article class="card reveal">
-            <div class="card__img"><img src="assets/images/traditional.jpg" alt="Traditional Gujarati Snacks" loading="lazy" /></div>
-            <div class="card__body"><h3>Traditional Snacks</h3><p>Authentic namkeen made the way Gujarat remembers.</p><div class="card__foot"><span class="price">From ₹260<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Traditional%20Snacks.">Order ›</a></div></div>
+          <article class="card reveal" data-name="Traditional Snacks" data-img="assets/images/traditional.jpg" data-desc="Authentic namkeen made the way Gujarat remembers." data-price="260" data-weights='["250g","500g","1 kg"]' data-ingredients="Besan, rice flour, oil, traditional spices, salt" data-storage="Store in an airtight container. Shelf life 15 days." data-tag="">
+            <div class="card__img"><img src="assets/images/traditional.jpg" alt="Traditional Snacks" loading="lazy" /></div>
+            <div class="card__body"><h3>Traditional Snacks</h3><p>Authentic namkeen made the way Gujarat remembers.</p><div class="card__foot"><span class="price">From ₹260<small>/kg</small></span><button class="btn-order" aria-label="Order Traditional Snacks">Order ›</button></div></div>
           </article>
         </div>
       </div>
@@ -560,6 +559,86 @@
       </div>
     </section>
   </main>
+
+  <!-- ============ PRODUCT DRAWER ============ -->
+  <div class="pd-overlay" id="pdOverlay" aria-hidden="true"></div>
+  <aside class="pd-drawer glass" id="pdDrawer" role="dialog" aria-modal="true" aria-label="Product details" aria-hidden="true">
+    <button class="pd-close" id="pdClose" aria-label="Close product panel">&#10005;</button>
+
+    <div class="pd-inner">
+      <!-- Image -->
+      <div class="pd-img-wrap">
+        <img id="pdImg" src="" alt="" />
+        <span class="pd-tag" id="pdTag"></span>
+      </div>
+
+      <!-- Info -->
+      <div class="pd-info">
+        <p class="pd-eyebrow">Hindocha Sweets</p>
+        <h2 class="pd-title" id="pdTitle"></h2>
+        <p class="pd-desc" id="pdDesc"></p>
+
+        <div class="pd-price-row">
+          <span class="pd-price" id="pdPrice"></span>
+          <span class="pd-tax">Excl. tax · Fresh made to order</span>
+        </div>
+
+        <!-- Weight selector -->
+        <div class="pd-section">
+          <label class="pd-label">Weight</label>
+          <div class="pd-weights" id="pdWeights"></div>
+        </div>
+
+        <!-- Quantity -->
+        <div class="pd-section">
+          <label class="pd-label">Quantity</label>
+          <div class="pd-qty">
+            <button class="pd-qty__btn" id="pdMinus" aria-label="Decrease">−</button>
+            <span class="pd-qty__val" id="pdQty">1</span>
+            <button class="pd-qty__btn" id="pdPlus" aria-label="Increase">+</button>
+          </div>
+        </div>
+
+        <!-- CTA buttons -->
+        <div class="pd-cta">
+          <a class="btn btn--primary btn--lg pd-wa" id="pdWhatsapp" target="_blank" rel="noopener" href="#">
+            💬 Order on WhatsApp
+          </a>
+          <a class="btn btn--ghost btn--lg pd-call" href="tel:+919000000001">📞 Call to Order</a>
+        </div>
+
+        <!-- Trust row -->
+        <ul class="pd-trust">
+          <li>✔ Fresh Handmade Daily</li>
+          <li>✔ Premium Ingredients</li>
+          <li>✔ Authentic Recipe</li>
+        </ul>
+
+        <!-- Accordion -->
+        <div class="pd-accordion">
+          <button class="pd-acc__head" aria-expanded="false">
+            <span>🌿 Ingredients</span><span class="pd-acc__arrow">›</span>
+          </button>
+          <div class="pd-acc__body"><p id="pdIngredients"></p></div>
+
+          <button class="pd-acc__head" aria-expanded="false">
+            <span>📦 Storage Instructions</span><span class="pd-acc__arrow">›</span>
+          </button>
+          <div class="pd-acc__body"><p id="pdStorage"></p></div>
+
+          <button class="pd-acc__head" aria-expanded="false">
+            <span>🚚 Shipping &amp; Delivery</span><span class="pd-acc__arrow">›</span>
+          </button>
+          <div class="pd-acc__body"><p>We deliver across Gujarat. Same-day delivery available for orders placed before 12 PM. Bulk/festival orders dispatched within 24–48 hours. Contact us for delivery to your location.</p></div>
+
+          <button class="pd-acc__head" aria-expanded="false">
+            <span>↩️ Cancellation &amp; Refund</span><span class="pd-acc__arrow">›</span>
+          </button>
+          <div class="pd-acc__body"><p>Orders can be cancelled within 2 hours of placement. Since products are freshly made, refunds are issued for damaged or incorrect items only. Please WhatsApp us with a photo within 24 hours of receipt.</p></div>
+        </div>
+      </div>
+    </div>
+  </aside>
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">

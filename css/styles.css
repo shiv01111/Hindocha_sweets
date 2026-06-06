@@ -430,6 +430,135 @@ em { font-style: italic; color: var(--saffron); }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,.5); } 70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
 
 /* =============================================================
+   PRODUCT DRAWER
+   ============================================================= */
+.pd-overlay {
+  position: fixed; inset: 0; z-index: 150;
+  background: rgba(20, 10, 5, 0.55);
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  opacity: 0; pointer-events: none;
+  transition: opacity .4s var(--ease);
+}
+.pd-overlay.open { opacity: 1; pointer-events: all; }
+
+.pd-drawer {
+  position: fixed; z-index: 160;
+  background: var(--bg-elev);
+  box-shadow: var(--shadow-lg);
+  transition: transform .45s var(--ease);
+  display: flex; flex-direction: column;
+  /* Desktop: right panel */
+  inset: 0 0 0 auto;
+  width: min(520px, 96vw);
+  border-left: 1px solid var(--glass-border);
+  transform: translateX(100%);
+  border-radius: 0;
+  overflow-y: auto;
+}
+.pd-drawer.open { transform: translateX(0); }
+.pd-drawer[aria-hidden="true"] { visibility: hidden; }
+.pd-drawer.open[aria-hidden="false"] { visibility: visible; }
+
+.pd-close {
+  position: sticky; top: 0; z-index: 2;
+  display: flex; align-items: center; justify-content: flex-end;
+  padding: .8rem 1.2rem;
+  background: var(--bg-elev); border-bottom: 1px solid var(--line);
+  font-size: 1.3rem; color: var(--text-soft); font-weight: 600;
+  width: 100%; cursor: pointer;
+  transition: color .2s;
+}
+.pd-close:hover { color: var(--saffron); }
+
+.pd-inner { display: flex; flex-direction: column; }
+
+/* Image */
+.pd-img-wrap { position: relative; aspect-ratio: 4/3; overflow: hidden; flex-shrink: 0; }
+.pd-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.pd-drawer.open .pd-img-wrap img { transform: scale(1.02); }
+.pd-tag {
+  position: absolute; top: 14px; left: 14px;
+  background: var(--grad-gold); color: #fff;
+  font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  padding: .35rem .8rem; border-radius: var(--radius-pill);
+}
+.pd-tag:empty { display: none; }
+
+/* Info panel */
+.pd-info { padding: 1.6rem 1.8rem 2.4rem; display: flex; flex-direction: column; gap: 1.2rem; }
+.pd-eyebrow { font-size: .78rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--saffron); }
+.pd-title { font-family: var(--serif); font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 800; line-height: 1.1; }
+.pd-desc { color: var(--text-soft); font-size: 1rem; line-height: 1.6; }
+
+.pd-price-row { display: flex; align-items: baseline; gap: .8rem; flex-wrap: wrap; }
+.pd-price { font-family: var(--serif); font-size: 1.9rem; font-weight: 800; color: var(--maroon); }
+[data-theme="dark"] .pd-price { color: var(--gold-light); }
+.pd-tax { font-size: .78rem; color: var(--text-soft); }
+
+/* Sections */
+.pd-section { display: flex; flex-direction: column; gap: .6rem; }
+.pd-label { font-size: .82rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-soft); }
+
+/* Weight chips */
+.pd-weights { display: flex; flex-wrap: wrap; gap: .6rem; }
+.pd-wt {
+  padding: .5rem 1.1rem; border-radius: var(--radius-pill); cursor: pointer;
+  border: 1.5px solid var(--line); background: var(--bg); color: var(--text);
+  font-size: .9rem; font-weight: 600; transition: all .25s var(--ease);
+}
+.pd-wt:hover { border-color: var(--saffron); color: var(--saffron); }
+.pd-wt.active { background: var(--grad-gold); border-color: transparent; color: #fff; }
+
+/* Quantity */
+.pd-qty { display: flex; align-items: center; gap: 0; border: 1.5px solid var(--line); border-radius: var(--radius-pill); overflow: hidden; width: fit-content; }
+.pd-qty__btn { width: 44px; height: 44px; font-size: 1.4rem; font-weight: 600; color: var(--text); background: var(--bg-elev); border: none; cursor: pointer; transition: background .2s, color .2s; }
+.pd-qty__btn:hover { background: var(--saffron); color: #fff; }
+.pd-qty__val { min-width: 44px; text-align: center; font-weight: 700; font-size: 1.1rem; color: var(--text); padding: 0 .4rem; }
+
+/* CTA */
+.pd-cta { display: flex; flex-direction: column; gap: .7rem; }
+.pd-cta .btn { width: 100%; justify-content: center; text-align: center; }
+.pd-wa { background: linear-gradient(135deg, #25D366, #128C7E); box-shadow: 0 10px 28px rgba(37,211,102,.35); color: #fff; border: none; }
+.pd-wa:hover { transform: translateY(-3px); box-shadow: 0 18px 38px rgba(37,211,102,.4); }
+.pd-call { border-color: var(--line); }
+
+/* Trust */
+.pd-trust { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; font-size: .82rem; font-weight: 500; color: var(--text-soft); list-style: none; }
+
+/* Accordion */
+.pd-accordion { border-top: 1px solid var(--line); }
+.pd-acc__head {
+  width: 100%; display: flex; justify-content: space-between; align-items: center;
+  padding: .9rem 0; border: none; background: none; cursor: pointer;
+  font-family: var(--sans); font-size: .98rem; font-weight: 600; color: var(--text);
+  border-bottom: 1px solid var(--line); text-align: left; gap: .5rem;
+  transition: color .2s;
+}
+.pd-acc__head:hover { color: var(--saffron); }
+.pd-acc__arrow { flex-shrink: 0; font-size: 1.1rem; transition: transform .35s var(--ease); display: inline-block; }
+.pd-acc__head[aria-expanded="true"] .pd-acc__arrow { transform: rotate(90deg); }
+.pd-acc__body { max-height: 0; overflow: hidden; transition: max-height .4s var(--ease), padding .4s; }
+.pd-acc__body.open { max-height: 400px; padding-bottom: .9rem; }
+.pd-acc__body p { font-size: .95rem; color: var(--text-soft); line-height: 1.65; padding-top: .7rem; }
+
+/* Mobile: bottom sheet */
+@media (max-width: 640px) {
+  .pd-drawer {
+    inset: auto 0 0 0; width: 100%; max-height: 92vh;
+    border-left: none; border-top: 1px solid var(--glass-border);
+    border-radius: 22px 22px 0 0;
+    transform: translateY(100%);
+  }
+  .pd-drawer.open { transform: translateY(0); }
+  .pd-img-wrap { aspect-ratio: 16/9; }
+  .pd-info { padding: 1.2rem 1.2rem 2rem; gap: 1rem; }
+  .pd-title { font-size: 1.5rem; }
+  .pd-price { font-size: 1.6rem; }
+  .pd-close { justify-content: space-between; }
+  .pd-close::before { content: "Product Details"; font-size: .85rem; font-weight: 700; color: var(--text); }
+}
+
+/* =============================================================
    RESPONSIVE — see bottom of file (after all component styles)
    ============================================================= */
 
