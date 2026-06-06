@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============ SEO ============ -->
+  <title>Hindocha Sweets — Gujarat's Most Loved Penda | Authentic Sweets & Farsan</title>
+  <meta name="description" content="Hindocha Sweets — authentic handmade Penda, sweets & farsan crafted with tradition for generations. Visit our Jam Raval, Bhatiya & Dwarka branches across Gujarat." />
+  <meta name="keywords" content="Hindocha Sweets, Penda, Kesar Penda, Gujarati sweets, farsan, gathiya, kaju katli, barfi, Jam Raval, Bhatiya, Dwarka" />
+  <meta name="theme-color" content="#E8821E" />
+  <link rel="canonical" href="https://www.hindochasweets.com/" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hindocha Sweets — Gujarat's Most Loved Penda" />
+  <meta property="og:description" content="Crafted with tradition, perfected through generations, and loved by families across Gujarat." />
+  <meta property="og:image" content="assets/images/penda.jpg" />
+  <meta property="og:url" content="https://www.hindochasweets.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hindocha Sweets — Gujarat's Most Loved Penda" />
+  <meta name="twitter:description" content="Authentic Taste of Gujarat Since Generations." />
+
+  <!-- Favicon (emoji data-uri so the demo is fully self-contained) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍯</text></svg>" />
+
+  <!-- ============ Fonts ============ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Preconnect to image CDN -->
+  <link rel="preconnect" href="https://images.unsplash.com" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- ============ JSON-LD: LocalBusiness (one per branch) ============ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Hindocha Sweets",
+    "image": "assets/images/penda.jpg",
+    "description": "Authentic Gujarati sweets and farsan, famous for handmade Penda crafted for generations.",
+    "slogan": "Authentic Taste of Gujarat Since Generations",
+    "servesCuisine": "Gujarati Sweets, Farsan",
+    "priceRange": "$$",
+    "department": [
+      {
+        "@type": "Bakery",
+        "name": "Hindocha Sweets — Jam Raval Branch",
+        "telephone": "+91-90000-00001",
+        "address": { "@type": "PostalAddress", "streetAddress": "Main Bazaar Road", "addressLocality": "Jam Raval", "addressRegion": "Gujarat", "addressCountry": "IN" },
+        "openingHours": "Mo-Su 08:00-21:30"
+      },
+      {
+        "@type": "Bakery",
+        "name": "Hindocha Sweets — Bhatiya Branch",
+        "telephone": "+91-90000-00002",
+        "address": { "@type": "PostalAddress", "streetAddress": "Market Chowk", "addressLocality": "Bhatiya", "addressRegion": "Gujarat", "addressCountry": "IN" },
+        "openingHours": "Mo-Su 08:00-21:30"
+      },
+      {
+        "@type": "Bakery",
+        "name": "Hindocha Sweets — Dwarka Branch",
+        "telephone": "+91-90000-00003",
+        "address": { "@type": "PostalAddress", "streetAddress": "Temple Road", "addressLocality": "Dwarka", "addressRegion": "Gujarat", "addressCountry": "IN" },
+        "openingHours": "Mo-Su 08:00-22:00"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- ============ Scroll progress bar ============ -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ============ ANNOUNCEMENT BAR ============ -->
+  <div class="announce" role="note">
+    <div class="announce__track">
+      <span>✨ 30+ Years of Trust &amp; Legacy</span><span class="dot">•</span>
+      <span>🍥 Gujarat's Most Loved Penda</span><span class="dot">•</span>
+      <span>🌿 Fresh Handmade Daily</span><span class="dot">•</span>
+      <span>🎁 Bulk &amp; Festival Orders Welcome</span><span class="dot">•</span>
+      <span>✨ 30+ Years of Trust &amp; Legacy</span><span class="dot">•</span>
+      <span>🍥 Gujarat's Most Loved Penda</span><span class="dot">•</span>
+      <span>🌿 Fresh Handmade Daily</span><span class="dot">•</span>
+      <span>🎁 Bulk &amp; Festival Orders Welcome</span><span class="dot">•</span>
+    </div>
+  </div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="brand" aria-label="Hindocha Sweets home">
+        <span class="brand__mark">H</span>
+        <span class="brand__text">
+          <span class="brand__name">Hindocha</span>
+          <span class="brand__sub">SWEETS</span>
+        </span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#penda">Penda</a>
+        <a href="#sweets">Sweets</a>
+        <a href="#farsan">Farsan</a>
+        <a href="#story">Our Story</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#branches">Branches</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#branches" class="btn btn--primary nav__cta">Visit Our Stores</a>
+        <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ SECTION 1 — HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" data-parallax="0.25" aria-hidden="true"></div>
+      <!-- Floating sweet elements -->
+      <div class="floaters" aria-hidden="true">
+        <span class="floater f1">🍥</span>
+        <span class="floater f2">✨</span>
+        <span class="floater f3">🟤</span>
+        <span class="floater f4">🍡</span>
+        <span class="floater f5">✨</span>
+      </div>
+
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <span class="eyebrow reveal">Authentic Taste of Gujarat Since Generations</span>
+          <h1 class="hero__title reveal">Gujarat's Most<br><em>Loved Penda</em></h1>
+          <p class="hero__sub reveal">Crafted with tradition, perfected through generations, and loved by families across Gujarat.</p>
+          <div class="hero__cta reveal">
+            <a href="#sweets" class="btn btn--primary btn--lg">Explore Products</a>
+            <a href="#branches" class="btn btn--ghost btn--lg">Visit Our Stores</a>
+          </div>
+          <ul class="trust reveal">
+            <li><span class="trust__check">✔</span> Authentic Recipes</li>
+            <li><span class="trust__check">✔</span> Fresh Daily</li>
+            <li><span class="trust__check">✔</span> Premium Ingredients</li>
+            <li><span class="trust__check">✔</span> Trusted By Thousands</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="hero__plate" data-parallax="-0.12">
+            <!-- TODO-SWAP: hero penda image -->
+            <img src="assets/images/penda.jpg"
+                 alt="Freshly prepared Hindocha special Penda" loading="eager" />
+            <div class="hero__badge glass">
+              <strong>50,000+</strong>
+              <span>Happy customers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#penda" class="scroll-hint" aria-label="Scroll down">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============ LEGACY BAND ============ -->
+    <section class="legacy" aria-label="Our legacy">
+      <div class="container legacy__grid">
+        <div class="legacy__stat reveal"><strong>30+</strong><span>Years of Trust &amp; Legacy</span></div>
+        <div class="legacy__stat reveal"><strong>50,000+</strong><span>Happy Families Served</span></div>
+        <div class="legacy__stat reveal"><strong>3</strong><span>Branches Across Gujarat</span></div>
+        <div class="legacy__stat reveal"><strong>100%</strong><span>Fresh &amp; Handmade Daily</span></div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 2 — LEGENDARY PENDA ============ -->
+    <section class="penda" id="penda">
+      <div class="container">
+        <div class="penda__grid">
+          <div class="penda__media reveal">
+            <!-- TODO-SWAP: close-up penda photography -->
+            <img class="penda__img-main" src="assets/images/penda-section.jpg" alt="Close-up of Hindocha special Penda" loading="lazy" />
+            <img class="penda__img-float glass" src="assets/images/penda.jpg" alt="Hindocha Special Penda close-up" loading="lazy" />
+          </div>
+
+          <div class="penda__copy">
+            <span class="eyebrow reveal">Our Signature Specialty</span>
+            <h2 class="reveal">The Pride of<br><em>Hindocha Sweets</em></h2>
+            <p class="lead reveal">For generations, families have travelled across Gujarat for one taste — our legendary handmade Penda. Slow-cooked in pure mawa, kissed with saffron, and finished by hand the way it has always been.</p>
+
+            <div class="penda__facts">
+              <div class="fact reveal">
+                <span class="fact__icon">🌿</span>
+                <h3>Pure Ingredients</h3>
+                <p>Fresh mawa, premium saffron, and cardamom — nothing artificial, ever.</p>
+              </div>
+              <div class="fact reveal">
+                <span class="fact__icon">👐</span>
+                <h3>Handcrafted Daily</h3>
+                <p>Shaped by master halwais using recipes passed down through generations.</p>
+              </div>
+              <div class="fact reveal">
+                <span class="fact__icon">❤️</span>
+                <h3>Loved by Families</h3>
+                <p>The first sweet at every celebration, festival, and homecoming.</p>
+              </div>
+            </div>
+
+            <a href="#sweets" class="btn btn--primary reveal">Discover the Collection</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 3 — SWEETS COLLECTION ============ -->
+    <section class="collection" id="sweets">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Handmade With Love</span>
+          <h2>Our Sweets Collection</h2>
+          <p>A treasury of timeless Gujarati mithai, prepared fresh every single day.</p>
+        </header>
+
+        <div class="cards">
+          <!-- card template repeated; TODO-SWAP each product image -->
+          <article class="card reveal">
+            <div class="card__img"><img src="assets/images/penda.jpg" alt="Hindocha Special Penda" loading="lazy" /><span class="card__tag">Bestseller</span></div>
+            <div class="card__body"><h3>Special Penda</h3><p>Our legendary signature — rich, soft & melt-in-mouth.</p><div class="card__foot"><span class="price">From ₹420<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Special%20Penda.">Order ›</a></div></div>
+          </article>
+          <article class="card reveal">
+            <div class="card__img"><img src="assets/images/penda-closeup.jpg" alt="Kesar Penda" loading="lazy" /></div>
+            <div class="card__body"><h3>Kesar Penda</h3><p>Infused with premium Kashmiri saffron for a royal finish.</p><div class="card__foot"><span class="price">From ₹480<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Kesar%20Penda.">Order ›</a></div></div>
+          </article>
+          <article class="card reveal">
+            <div class="card__img"><img src="assets/images/barfi.jpg" alt="Barfi" loading="lazy" /></div>
+            <div class="card__body"><h3>Barfi</h3><p>Dense, fragrant milk barfi layered with care.</p><div class="card__foot"><span class="price">From ₹440<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Barfi.">Order ›</a></div></div>
+          </article>
+          <article class="card reveal">
+            <div class="card__img"><img src="assets/images/kaju-katli.jpg" alt="Kaju Katli" loading="lazy" /></div>
+            <div class="card__body"><h3>Kaju Katli</h3><p>Wafer-thin cashew diamonds with edible silver leaf.</p><div class="card__foot"><span class="price">From ₹720<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Kaju%20Katli.">Order ›</a></div></div>
+          </article>
+          <article class="card reveal">
+            <div class="card__img"><img src="assets/images/dry-fruit.jpg" alt="Dry Fruit Sweets" loading="lazy" /></div>
+            <div class="card__body"><h3>Dry Fruit Sweets</h3><p>Loaded with almonds, pistachio & cashew indulgence.</p><div class="card__foot"><span class="price">From ₹860<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Dry%20Fruit%20Sweets.">Order ›</a></div></div>
+          </article>
+          <article class="card reveal">
+            <div class="card__img"><img src="assets/images/festival.jpg" alt="Festival Specials" loading="lazy" /><span class="card__tag">Seasonal</span></div>
+            <div class="card__body"><h3>Festival Specials</h3><p>Limited celebration sweets for every Gujarati festival.</p><div class="card__foot"><span class="price">From ₹520<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Festival%20Specials.">Order ›</a></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 4 — FARSAN COLLECTION ============ -->
+    <section class="collection collection--alt" id="farsan">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Crispy & Savoury</span>
+          <h2>Our Farsan Collection</h2>
+          <p>Traditional Gujarati snacks, fried fresh and seasoned to perfection.</p>
+        </header>
+
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card__img"><img src="assets/images/gathiya.jpg" alt="Gathiya" loading="lazy" /></div>
+            <div class="card__body"><h3>Gathiya</h3><p>Soft, melt-away besan gathiya — a Gujarati breakfast classic.</p><div class="card__foot"><span class="price">From ₹260<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Gathiya.">Order ›</a></div></div>
+          </article>
+          <article class="card reveal">
+            <div class="card__img"><img src="assets/images/bhavnagari.jpg" alt="Bhavnagari Gathiya" loading="lazy" /><span class="card__tag">Regional</span></div>
+            <div class="card__body"><h3>Bhavnagari Gathiya</h3><p>The authentic spiced variety from the heart of Saurashtra.</p><div class="card__foot"><span class="price">From ₹280<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Bhavnagari%20Gathiya.">Order ›</a></div></div>
+          </article>
+          <article class="card reveal">
+            <div class="card__img"><img src="assets/images/chevdo.jpg" alt="Chevdo" loading="lazy" /></div>
+            <div class="card__body"><h3>Chevdo</h3><p>Crunchy, lightly spiced mix with peanuts & curry leaves.</p><div class="card__foot"><span class="price">From ₹240<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Chevdo.">Order ›</a></div></div>
+          </article>
+          <article class="card reveal">
+            <div class="card__img"><img src="assets/images/sev.jpg" alt="Sev" loading="lazy" /></div>
+            <div class="card__body"><h3>Sev</h3><p>Fine golden strands — the perfect everyday companion.</p><div class="card__foot"><span class="price">From ₹240<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Sev.">Order ›</a></div></div>
+          </article>
+          <article class="card reveal">
+            <div class="card__img"><img src="assets/images/mix-farsan.jpg" alt="Mix Farsan" loading="lazy" /></div>
+            <div class="card__body"><h3>Mix Farsan</h3><p>A festive medley of our finest crispy savouries.</p><div class="card__foot"><span class="price">From ₹300<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Mix%20Farsan.">Order ›</a></div></div>
+          </article>
+          <article class="card reveal">
+            <div class="card__img"><img src="assets/images/traditional.jpg" alt="Traditional Gujarati Snacks" loading="lazy" /></div>
+            <div class="card__body"><h3>Traditional Snacks</h3><p>Authentic namkeen made the way Gujarat remembers.</p><div class="card__foot"><span class="price">From ₹260<small>/kg</small></span><a class="btn-order" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hi%20Hindocha%20Sweets!%20I'd%20like%20to%20order%20Traditional%20Snacks.">Order ›</a></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 5 — WHY CUSTOMERS LOVE US ============ -->
+    <section class="why" id="why">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">The Hindocha Promise</span>
+          <h2>Why Customers Love Us</h2>
+          <p>Six reasons families across Gujarat trust us, generation after generation.</p>
+        </header>
+
+        <div class="features">
+          <div class="feature glass reveal"><div class="feature__icon">📜</div><h3>Traditional Recipes</h3><p>Time-honoured methods preserved across generations of halwais.</p></div>
+          <div class="feature glass reveal"><div class="feature__icon">🌱</div><h3>Fresh Ingredients</h3><p>Only premium mawa, pure ghee, saffron & dry fruits — never compromised.</p></div>
+          <div class="feature glass reveal"><div class="feature__icon">👐</div><h3>Handmade Quality</h3><p>Every batch crafted by hand, never mass-produced.</p></div>
+          <div class="feature glass reveal"><div class="feature__icon">✨</div><h3>Hygienic Preparation</h3><p>Spotless kitchens and careful handling you can trust.</p></div>
+          <div class="feature glass reveal"><div class="feature__icon">🏆</div><h3>Trusted Brand</h3><p>A household name built on decades of consistency & love.</p></div>
+          <div class="feature glass reveal"><div class="feature__icon">📍</div><h3>Multiple Locations</h3><p>Conveniently served from three branches across Gujarat.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 6 — OUR STORY ============ -->
+    <section class="story" id="story">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Our Heritage</span>
+          <h2>A Story Written in Sweetness</h2>
+          <p>From a single family kitchen to Gujarat's most loved Penda.</p>
+        </header>
+
+        <div class="timeline">
+          <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-card glass"><span class="tl-year">The Beginning</span><h3>A Family Tradition</h3><p>It began with one family, one recipe, and a promise to never compromise on taste.</p></div></div>
+          <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-card glass"><span class="tl-year">Generations</span><h3>Years of Experience</h3><p>Skills passed from father to son, perfecting the craft of every Penda.</p></div></div>
+          <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-card glass"><span class="tl-year">Roots</span><h3>Gujarati Heritage</h3><p>Rooted in the flavours, festivals and warmth of Gujarat's culture.</p></div></div>
+          <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-card glass"><span class="tl-year">Always</span><h3>Commitment to Quality</h3><p>Fresh every day, handmade always — quality is our signature.</p></div></div>
+          <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-card glass"><span class="tl-year">Today</span><h3>Community Trust</h3><p>Loved by thousands of families who make us part of their celebrations.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 7 — GALLERY ============ -->
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">A Glimpse Inside</span>
+          <h2>The Hindocha Gallery</h2>
+          <p>From kitchen to counter — moments of craft, flavour & celebration.</p>
+        </header>
+
+        <div class="masonry" id="masonry">
+          <!-- TODO-SWAP: replace gallery images with real photos -->
+          <figure class="masonry__item reveal"><img src="assets/images/penda.jpg" alt="Penda preparation" loading="lazy" /></figure>
+          <figure class="masonry__item reveal"><img src="assets/images/penda-section.jpg" alt="Sweet making process" loading="lazy" /></figure>
+          <figure class="masonry__item reveal"><img src="assets/images/gathiya.jpg" alt="Farsan production" loading="lazy" /></figure>
+          <figure class="masonry__item reveal"><img src="assets/images/shop-display.jpg" alt="Store interior" loading="lazy" /></figure>
+          <figure class="masonry__item reveal"><img src="assets/images/festival.jpg" alt="Festival preparations" loading="lazy" /></figure>
+          <figure class="masonry__item reveal"><img src="assets/images/tray.jpg" alt="Customer moments" loading="lazy" /></figure>
+          <figure class="masonry__item reveal"><img src="assets/images/kaju-katli.jpg" alt="Kaju katli platter" loading="lazy" /></figure>
+          <figure class="masonry__item reveal"><img src="assets/images/dry-fruit.jpg" alt="Dry fruit sweets" loading="lazy" /></figure>
+        </div>
+      </div>
+
+      <!-- Lightbox -->
+      <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+        <img src="" alt="" id="lightboxImg" />
+      </div>
+    </section>
+
+    <!-- ============ SECTION 8 — BRANCH LOCATIONS ============ -->
+    <section class="branches" id="branches">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Find Us</span>
+          <h2>Our Branches Across Gujarat</h2>
+          <p>Three welcoming stores, the same legendary taste.</p>
+        </header>
+
+        <div class="branch-cards">
+          <!-- TODO-SWAP: real images, phone numbers, addresses, map src per branch -->
+          <article class="branch glass reveal">
+            <div class="branch__img"><img src="assets/images/shop-display.jpg" alt="Hindocha Sweets Jam Raval branch" loading="lazy" /></div>
+            <div class="branch__body">
+              <h3>Jam Raval Branch</h3>
+              <p class="branch__addr">Main Bazaar Road, Jam Raval, Gujarat 361001</p>
+              <ul class="branch__meta">
+                <li>📞 <a href="tel:+919000000001">+91 90000 00001</a></li>
+                <li>🕗 Open daily · 8:00 AM – 9:30 PM</li>
+              </ul>
+              <div class="branch__map">
+                <iframe title="Jam Raval branch map" src="https://www.google.com/maps?q=Jam+Raval,+Gujarat&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <div class="branch__cta">
+                <a class="btn btn--primary btn--sm" href="tel:+919000000001">Call</a>
+                <a class="btn btn--ghost btn--sm" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Jam+Raval,+Gujarat">Directions</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="branch glass reveal">
+            <div class="branch__img"><img src="assets/images/assorted.jpg" alt="Hindocha Sweets Bhatiya branch" loading="lazy" /></div>
+            <div class="branch__body">
+              <h3>Bhatiya Branch</h3>
+              <p class="branch__addr">Market Chowk, Bhatiya, Gujarat 361315</p>
+              <ul class="branch__meta">
+                <li>📞 <a href="tel:+919000000002">+91 90000 00002</a></li>
+                <li>🕗 Open daily · 8:00 AM – 9:30 PM</li>
+              </ul>
+              <div class="branch__map">
+                <iframe title="Bhatiya branch map" src="https://www.google.com/maps?q=Bhatiya,+Gujarat&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <div class="branch__cta">
+                <a class="btn btn--primary btn--sm" href="tel:+919000000002">Call</a>
+                <a class="btn btn--ghost btn--sm" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Bhatiya,+Gujarat">Directions</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="branch glass reveal">
+            <div class="branch__img"><img src="assets/images/platter.jpg" alt="Hindocha Sweets Dwarka branch" loading="lazy" /></div>
+            <div class="branch__body">
+              <h3>Dwarka Branch</h3>
+              <p class="branch__addr">Temple Road, Dwarka, Gujarat 361335</p>
+              <ul class="branch__meta">
+                <li>📞 <a href="tel:+919000000003">+91 90000 00003</a></li>
+                <li>🕗 Open daily · 8:00 AM – 10:00 PM</li>
+              </ul>
+              <div class="branch__map">
+                <iframe title="Dwarka branch map" src="https://www.google.com/maps?q=Dwarka,+Gujarat&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <div class="branch__cta">
+                <a class="btn btn--primary btn--sm" href="tel:+919000000003">Call</a>
+                <a class="btn btn--ghost btn--sm" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Dwarka,+Gujarat">Directions</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 9 — TESTIMONIALS ============ -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Loved By Thousands</span>
+          <h2>What Our Customers Say</h2>
+        </header>
+
+        <div class="carousel" id="carousel">
+          <div class="carousel__track" id="carouselTrack">
+            <figure class="quote glass">
+              <div class="stars">★★★★★</div>
+              <blockquote>"The best Penda in all of Gujarat. We order for every family function and guests always ask where it's from."</blockquote>
+              <figcaption><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80" alt="" loading="lazy" /><span><strong>Priya Mehta</strong><small>Rajkot</small></span></figcaption>
+            </figure>
+            <figure class="quote glass">
+              <div class="stars">★★★★★</div>
+              <blockquote>"Authentic taste that reminds me of my childhood. The Kesar Penda simply melts in your mouth."</blockquote>
+              <figcaption><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="" loading="lazy" /><span><strong>Rajesh Patel</strong><small>Jamnagar</small></span></figcaption>
+            </figure>
+            <figure class="quote glass">
+              <div class="stars">★★★★★</div>
+              <blockquote>"Ordered a wedding box for 300 guests — flawless quality and on-time. Truly premium service."</blockquote>
+              <figcaption><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="" loading="lazy" /><span><strong>Anjali Shah</strong><small>Dwarka</small></span></figcaption>
+            </figure>
+            <figure class="quote glass">
+              <div class="stars">★★★★★</div>
+              <blockquote>"Fresh farsan every morning. The Bhavnagari Gathiya is unmatched anywhere else."</blockquote>
+              <figcaption><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="" loading="lazy" /><span><strong>Kiran Joshi</strong><small>Bhatiya</small></span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel__nav">
+            <button id="prevQuote" aria-label="Previous review">‹</button>
+            <div class="carousel__dots" id="carouselDots"></div>
+            <button id="nextQuote" aria-label="Next review">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 10 — BULK & FESTIVAL ORDERS ============ -->
+    <section class="bulk" id="bulk">
+      <div class="bulk__bg" aria-hidden="true"></div>
+      <div class="container bulk__inner reveal">
+        <span class="eyebrow eyebrow--light">Special Orders</span>
+        <h2>Make Every Celebration Sweeter</h2>
+        <p>Weddings · Festivals · Corporate Gifts · Family Functions · Special Events</p>
+        <div class="bulk__pills">
+          <span>💍 Wedding Orders</span>
+          <span>🎆 Festival Orders</span>
+          <span>🎁 Corporate Gift Boxes</span>
+          <span>📦 Bulk Orders</span>
+          <span>🍽️ Event Catering</span>
+        </div>
+        <a href="#contact" class="btn btn--gold btn--lg">Request a Quote</a>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 11 — CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="container contact__grid">
+        <div class="contact__intro reveal">
+          <span class="eyebrow">Get in Touch</span>
+          <h2>Let's Make Something Sweet</h2>
+          <p>Have a question or a special order? Send us a message and we'll reply on WhatsApp.</p>
+          <ul class="contact__list">
+            <li>📞 <a href="tel:+919000000001">+91 90000 00001</a></li>
+            <li>✉️ <a href="mailto:hello@hindochasweets.com">hello@hindochasweets.com</a></li>
+            <li>📍 Jam Raval · Bhatiya · Dwarka</li>
+          </ul>
+          <a class="btn btn--whatsapp" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hello%20Hindocha%20Sweets!">💬 Chat on WhatsApp</a>
+        </div>
+
+        <form class="contact__form glass reveal" id="contactForm" novalidate>
+          <div class="field">
+            <label for="cName">Name</label>
+            <input type="text" id="cName" name="name" required placeholder="Your full name" />
+          </div>
+          <div class="field">
+            <label for="cMobile">Mobile Number</label>
+            <input type="tel" id="cMobile" name="mobile" required placeholder="+91 ..." />
+          </div>
+          <div class="field">
+            <label for="cEmail">Email</label>
+            <input type="email" id="cEmail" name="email" placeholder="you@example.com" />
+          </div>
+          <div class="field">
+            <label for="cType">Inquiry Type</label>
+            <select id="cType" name="type">
+              <option>General Inquiry</option>
+              <option>Wedding Order</option>
+              <option>Festival Order</option>
+              <option>Corporate Gift Box</option>
+              <option>Bulk Order</option>
+              <option>Event Catering</option>
+            </select>
+          </div>
+          <div class="field field--full">
+            <label for="cMsg">Message</label>
+            <textarea id="cMsg" name="message" rows="4" placeholder="Tell us what you need..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg field--full">Send via WhatsApp</button>
+          <p class="form-note" id="formNote" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ NEWSLETTER ============ -->
+    <section class="newsletter" aria-label="Newsletter">
+      <div class="container newsletter__inner glass reveal">
+        <div class="newsletter__copy">
+          <span class="eyebrow">Join the Hindocha Family</span>
+          <h2>Sweet Offers, Straight to You</h2>
+          <p>Be first to know about festive specials, new arrivals &amp; exclusive offers.</p>
+        </div>
+        <form class="newsletter__form" id="newsletterForm" novalidate>
+          <input type="email" id="nlEmail" name="email" placeholder="Enter your email" aria-label="Email address" required />
+          <button type="submit" class="btn btn--primary">Subscribe</button>
+          <p class="form-note" id="nlNote" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#hero" class="brand">
+          <span class="brand__mark">H</span>
+          <span class="brand__text"><span class="brand__name">Hindocha</span><span class="brand__sub">SWEETS</span></span>
+        </a>
+        <p class="footer__tag">Authentic Taste of Gujarat Since Generations</p>
+      </div>
+      <nav class="footer__col" aria-label="Explore">
+        <h4>Explore</h4>
+        <a href="#penda">Legendary Penda</a>
+        <a href="#sweets">Sweets</a>
+        <a href="#farsan">Farsan</a>
+        <a href="#gallery">Gallery</a>
+      </nav>
+      <nav class="footer__col" aria-label="Company">
+        <h4>Company</h4>
+        <a href="#story">Our Story</a>
+        <a href="#why">Why Us</a>
+        <a href="#bulk">Bulk Orders</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer__col">
+        <h4>Branches</h4>
+        <p>Jam Raval</p>
+        <p>Bhatiya</p>
+        <p>Dwarka</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span id="year"></span> Hindocha Sweets. All rights reserved.</p>
+      <p>Crafted with ❤️ in Gujarat.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp button -->
+  <a class="fab-whatsapp" target="_blank" rel="noopener" href="https://wa.me/919000000001?text=Hello%20Hindocha%20Sweets!" aria-label="Chat on WhatsApp">💬</a>
+
+  <!-- ============ Scripts (CDN, deferred) ============ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

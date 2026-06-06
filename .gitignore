@@ -1,0 +1,10 @@
+# Candidate/temp images (not needed in repo)
+assets/images/_cand/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
