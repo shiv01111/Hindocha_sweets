@@ -260,7 +260,8 @@
 
   function itemPrice(item) {
     const m = wtMult[item.weight] ?? 1;
-    return Math.round(item.price * m * item.qty);
+    const unit = Math.round(item.price * m);   // price per selected weight
+    return unit * item.qty;                     // × qty (no extra rounding drift)
   }
 
   function renderCart() {
@@ -280,21 +281,29 @@
     if (!cart.length) return;
 
     // Render items
-    cartItemsEl.innerHTML = cart.map((item, idx) => `
+    cartItemsEl.innerHTML = cart.map((item, idx) => {
+      const mult = wtMult[item.weight] ?? 1;
+      const unitPrice = Math.round(item.price * mult);   // price for selected weight × 1
+      const lineTotal = unitPrice * item.qty;             // × qty
+      return `
       <li class="cart-item" data-idx="${idx}">
         <div class="cart-item__img"><img src="${item.img}" alt="${item.name}" loading="lazy" /></div>
         <div class="cart-item__info">
           <div class="cart-item__name">${item.name}</div>
-          <div class="cart-item__meta">${item.weight} · ₹${item.price}/kg</div>
+          <div class="cart-item__meta">${item.weight} · ₹${item.price.toLocaleString("en-IN")}/kg</div>
           <div class="cart-item__qty">
             <button data-action="minus" data-idx="${idx}" aria-label="Decrease">−</button>
             <span>${item.qty}</span>
             <button data-action="plus" data-idx="${idx}" aria-label="Increase">+</button>
           </div>
-          <div class="cart-item__price">₹${itemPrice(item).toLocaleString("en-IN")}</div>
+          <div class="cart-item__price">
+            <span class="unit">₹${unitPrice.toLocaleString("en-IN")} × ${item.qty}</span>
+            <span class="total">= ₹${lineTotal.toLocaleString("en-IN")}</span>
+          </div>
         </div>
         <button class="cart-item__remove" data-remove="${idx}" aria-label="Remove ${item.name}" title="Remove">✕</button>
-      </li>`).join("");
+      </li>`;
+    }).join("");
 
     // Totals
     cartSubEl.textContent   = `₹${subtotal.toLocaleString("en-IN")}`;
