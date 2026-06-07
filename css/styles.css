@@ -769,10 +769,11 @@ body { overflow-x: hidden; max-width: 100%; }
   background: var(--grad-dark); color: #F3E2D2;
   font-size: .82rem; letter-spacing: .04em; border-bottom: 1px solid rgba(230,194,90,.25);
 }
-.announce__track { display: flex; gap: 1.4rem; white-space: nowrap; padding-left: 100%; animation: marquee 26s linear infinite; }
-.announce__track .dot { color: var(--gold-light); opacity: .7; }
+.announce__track { display: flex; gap: 0; width: max-content; min-width: max-content; flex-shrink: 0; white-space: nowrap; animation: marquee 26s linear infinite; will-change: transform; }
+.announce__track span { padding: 0 1.5rem; }
+.announce__track .dot { padding: 0; color: var(--gold-light); opacity: .7; }
 .announce:hover .announce__track { animation-play-state: paused; }
-@keyframes marquee { to { transform: translateX(-100%); } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ---------- Product card foot: price + order ---------- */
 .card__foot { display: flex; align-items: center; justify-content: space-between; gap: .8rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--line); }
