@@ -187,7 +187,7 @@
 
   /* ---------- Contact form -> WhatsApp ---------- */
   // TODO-SWAP: replace with the real WhatsApp business number (country code, no +/spaces).
-  const WHATSAPP_NUMBER = "919000000001";
+  const WHATSAPP_NUMBER = "919727975736";
   const form = $("#contactForm");
   form?.addEventListener("submit", e => {
     e.preventDefault();
@@ -232,7 +232,7 @@
      State lives in localStorage. Cart drawer slides in from left.
      "Order All on WhatsApp" sends one message with all items.
   ============================================================ */
-  const WA_CART = "919000000001"; // TODO-SWAP: real WA number
+  const WA_CART = "919727975736";
   const CART_KEY = "hs_cart";
 
   // Weight → multiplier for price calculation
@@ -385,7 +385,7 @@
      Opens a Gwalia-style product detail panel when "Order ›" is clicked.
      Reads all data from card's data-* attributes so no extra config needed.
   ============================================================ */
-  const WA_NUM = "919000000001"; // TODO-SWAP: real number
+  const WA_NUM = "919727975736";
   const overlay = $("#pdOverlay");
   const drawer  = $("#pdDrawer");
   let drawerQty = 1;

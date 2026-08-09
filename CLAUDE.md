@@ -117,13 +117,13 @@ D:\Hindocha sweets\
 ## Branches (TODO-SWAP with real data)
 | Branch | Address | Phone | Hours |
 |--------|---------|-------|-------|
-| Jam Raval | Main Bazaar Road, Jam Raval, Gujarat 361001 | +91 90000 00001 | 8AM–9:30PM |
-| Bhatiya | Market Chowk, Bhatiya, Gujarat 361315 | +91 90000 00002 | 8AM–9:30PM |
-| Dwarka | Temple Road, Dwarka, Gujarat 361335 | +91 90000 00003 | 8AM–10PM |
+| Jam Raval | Main Bazaar Road, Jam Raval, Gujarat 361001 | +91 97279 75736 | 8AM–9:30PM |
+| Bhatiya | Market Chowk, Bhatiya, Gujarat 361315 | +91 97279 75736 | 8AM–9:30PM |
+| Dwarka | Temple Road, Dwarka, Gujarat 361335 | +91 97279 75736 | 8AM–10PM |
 
-**WhatsApp number (TODO-SWAP):** `919000000001`  
+**WhatsApp number:** `919727975736`  
 → In `js/main.js`: `WHATSAPP_NUMBER`, `WA_NUM`, `WA_CART`  
-→ In `index.html`: all `wa.me/919000000001` links
+→ In `index.html`: all `wa.me/919727975736` links
 
 ---
 
@@ -194,9 +194,9 @@ D:\Hindocha sweets\
 
 ## TODO-SWAP Checklist (before going live)
 - [ ] Replace all `assets/images/*.jpg` with real Hindocha product photos
-- [ ] Replace `+91 90000 00001/02/03` with real branch phone numbers
+- [x] Replace `+91 90000 00001/02/03` with real phone number (`+91 97279 75736`)
 - [ ] Replace branch addresses and Google Maps iframe `src` URLs
-- [ ] Replace `919000000001` WhatsApp number in `js/main.js` (3 places) and `index.html`
+- [x] Replace `919000000001` WhatsApp number in `js/main.js` (3 places) and `index.html` with `919727975736`
 - [ ] Replace `hello@hindochasweets.com` with real email
 - [ ] Update `og:image`, `canonical` URL, JSON-LD brand URL
 - [ ] Wire newsletter form to a real email service (Mailchimp, etc.)
